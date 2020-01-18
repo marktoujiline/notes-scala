@@ -1,0 +1,15 @@
+options:
+  - title: Syntax
+    url: docs/
+    menu_section: intro
+
+    nested_options:
+      - title: Functions
+        url: docs/functions/
+        menu_section: intro
+      - title: Pattern Matching
+        url: docs/pattern-matching/
+        menu_section: intro
+
+  - title: Collections
+    url: docs/collections/
