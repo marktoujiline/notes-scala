@@ -1,6 +1,6 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.13.1"
+ThisBuild / scalaVersion     := "2.12.9"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
 ThisBuild / organization     := "com.example"
 ThisBuild / organizationName := "example"
@@ -10,8 +10,10 @@ lazy val micrositeSettings: Seq[Def.Setting[_]] = Seq(
       micrositeDescription := "An sbt plugin to create awesome microsites for your project",
       micrositeBaseUrl := "",
       micrositeDocumentationUrl := "docs",
-      micrositeGithubOwner := "47deg",
-      micrositeGithubRepo := "sbt-microsites",
+      micrositeGithubOwner := "marktoujiline",
+      micrositeGithubToken := sys.env.get("GITHUB_TOKEN"),
+      micrositeGithubRepo := "notes-scala",
+      micrositePushSiteWith := GitHub4s,
       includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.md" | "*.svg"
     )
 
