@@ -11,9 +11,7 @@ lazy val micrositeSettings: Seq[Def.Setting[_]] = Seq(
       micrositeBaseUrl := "",
       micrositeDocumentationUrl := "docs",
       micrositeGithubOwner := "marktoujiline",
-      micrositeGithubToken := sys.env.get("GITHUB_TOKEN"),
       micrositeGithubRepo := "notes-scala",
-      micrositePushSiteWith := GitHub4s,
       includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.md" | "*.svg"
     )
 
