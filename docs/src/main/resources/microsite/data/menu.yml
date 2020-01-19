@@ -10,6 +10,9 @@ options:
       - title: Pattern Matching
         url: docs/pattern-matching/
         menu_section: intro
+      - title: Trait
+        url: docs/trait/
+        menu_section: intro
 
   - title: Collections
     url: docs/collections/
