@@ -6,4 +6,4 @@ install:
 
 after_success:
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then bash
-  scripts/publishMicrosite.sh; fi
+  sbt docs/publishMicrosite; fi
