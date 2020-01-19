@@ -6,12 +6,14 @@ ThisBuild / organization     := "com.example"
 ThisBuild / organizationName := "example"
 
 lazy val micrositeSettings: Seq[Def.Setting[_]] = Seq(
-      micrositeName := "sbt-microsites",
-      micrositeDescription := "An sbt plugin to create awesome microsites for your project",
-      micrositeBaseUrl := "",
+      micrositeName := "Mark Toujiline's Scala Notes",
+      micrositeDescription := "All personal notes related to Scala",
+      micrositeBaseUrl := "notes-scala",
       micrositeDocumentationUrl := "docs",
       micrositeGithubOwner := "marktoujiline",
       micrositeGithubRepo := "notes-scala",
+      micrositePushSiteWith := GitHub4s,
+      micrositeGithubToken := sys.env.get("NOTES_SCALA_GH"),
       includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.md" | "*.svg"
     )
 

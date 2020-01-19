@@ -1,7 +1,7 @@
 ---
 layout: homeFeatures
 features:
- - first:   ["Configuration", "sbt-microsites facilitates the creation of fancy microsites for your projects, with minimal tweaks"]
- - second:  ["Customize", "sbt-microsites provides a considerable scope for improvement and customization in terms of images and styles"]
- - third:   ["Documentation", "Writing documentation for your own microsites is fast and easy, so you don't have to deal with details"]
+ - first:   ["Scala Core", "Basic Scala features and syntax"]
+ - second:  ["Scala Library", "Overview of all library utilities Scala provides"]
+ - third:   ["Scala FP", "Digging deeper into type classes, monads, and FP libraries."]
 ---
