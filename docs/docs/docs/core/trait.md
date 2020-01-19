@@ -23,6 +23,28 @@ trait Animal {
     println("Roar") // will get executed when object with this trait is instantiated
 }
 ```
+You can use def or val for abstract members, but they have different behaviors. Lazy val cannot be used as abstract member, but can be used to implement one.
+```scala
+trait Animal {
+    def a: Int
+    val b: Int
+}
+
+new Animal {  // good
+    val a = 5
+    val b = 6
+}
+
+new Animal {  // good
+    lazy val a = 5
+    lazy val b = 6
+  }
+
+new Animal {  // error
+    def a = 5
+    def b = 6     // method b needs to be a stable, immutable value
+}
+```
 A trait can be generic.
 ```scala
 trait Iterator[A] {
@@ -86,6 +108,7 @@ val d = new D
 //class D is constructed
 ```
 When multiple traits are mixed into a class and they have the same method name, when that method is invoked, the last trait that’s created — the one on the farthest right — is the one that’s called.
+
 
 ## Questions?
 1. How are Scala traits and Java8 interfaces different?
