@@ -16,3 +16,12 @@ options:
 
   - title: Collections
     url: docs/collections/
+
+  - title: Functional Programming
+    url: docs/
+    menu_section: fp
+
+    nested_options:
+      - title: Bifunctor
+        url: docs/bifunctor/
+        menu_section: fp

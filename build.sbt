@@ -1,4 +1,5 @@
 import Dependencies._
+import microsites._
 
 ThisBuild / scalaVersion     := "2.12.9"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
@@ -14,6 +15,9 @@ lazy val micrositeSettings: Seq[Def.Setting[_]] = Seq(
       micrositeGithubRepo := "notes-scala",
       micrositePushSiteWith := GitHub4s,
       micrositeGithubToken := sys.env.get("NOTES_SCALA_GH"),
+      micrositeConfigYaml := ConfigYml(
+        yamlPath = Some((resourceDirectory in Compile).value / "microsite" / "myconfig.yml")
+      ),
       includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.md" | "*.svg"
     )
 

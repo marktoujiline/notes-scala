@@ -109,6 +109,40 @@ val d = new D
 ```
 When multiple traits are mixed into a class and they have the same method name, when that method is invoked, the last trait that’s created — the one on the farthest right — is the one that’s called.
 
+Note that you cannot inherit conflicting members.
+```scala
+trait A {
+  def hello = "Hi A"
+}
+defined trait A
 
+trait B {
+  def hello = "Hi B"
+}
+defined trait B
+
+object C extends A with B // object C inherits conflicting members
+```
+But you can have multiple different implementations of the same abstract member.
+```scala
+trait Base {
+   def op: String
+}
+
+trait Foo extends Base {
+   override def op = "foo"
+}
+
+trait Bar extends Base {
+   override def op = "bar"
+}
+
+class A extends Foo with Bar
+class B extends Bar with Foo
+
+(new A).op // bar
+(new B).op // foo
+```
+In this case, the order in which traits are applied determines which trait's member should be used. This is a solution to the diamond problem of multiple inheritance.x`
 ## Questions?
 1. How are Scala traits and Java8 interfaces different?
