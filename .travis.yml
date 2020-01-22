@@ -1,9 +1,13 @@
 language: scala
 
+before_install:
+  - sudo apt update
+  - sudo apt install graphviz
+
 install:
 - rvm use 2.6.5 --install --fuzzy
 - gem install jekyll -v 4
-- gem install jekyll-graphviz
+- gem install jekyll-diagrams
 
 after_success:
 - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then bash
