@@ -4,6 +4,8 @@ options:
     menu_section: intro
 
     nested_options:
+      - title: Case Class
+        url: docs/case-class/
       - title: Functions
         url: docs/functions/
         menu_section: intro
@@ -17,11 +19,11 @@ options:
   - title: Collections
     url: docs/collections/
 
-  - title: Functional Programming
+  - title: Misc
     url: docs/
-    menu_section: fp
+    menu_section: misc
 
     nested_options:
-      - title: Bifunctor
-        url: docs/bifunctor/
-        menu_section: fp
+      - title: Type Tagging
+        url: docs/type-tagging/
+        menu_section: misc
